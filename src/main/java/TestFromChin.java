@@ -11,6 +11,7 @@ import static com.codeborne.selenide.Selenide.$x;
 /**
  * Файл с тестом от Чинга.
  *  проверка новой ветки
+ *  Проверка новой ветки
  */
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TestFromChin {
