@@ -8,7 +8,7 @@ import java.util.List;
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
 
-/*Добавление женского топика2*/
+/*Добавление женского топика3*/
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Addpurchase {
