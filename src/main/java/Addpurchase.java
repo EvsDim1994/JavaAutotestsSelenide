@@ -2,18 +2,19 @@ import com.codeborne.selenide.*;
 import org.junit.jupiter.api.*;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-
 import java.util.List;
-
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
 
 
 
+
+
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
-public class Addpurchase {
-    @BeforeAll
+public class Addpurchase extends Hooks {
+ /*   @BeforeAll
     public void doBeforeAll() {
+
         System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver.exe");
     }
 
@@ -31,7 +32,8 @@ public class Addpurchase {
     public void doAfter() {
 
         WebDriverRunner.getWebDriver().quit();
-    }
+    }*/
+
 
     @Test
     public void test1(){
