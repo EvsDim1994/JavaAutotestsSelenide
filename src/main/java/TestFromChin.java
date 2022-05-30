@@ -8,11 +8,8 @@ import java.util.List;
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
 
-/**
- * Файл с тестом от Чинга.
- *  проверка новой ветки
- * проверка 2
- */
+
+
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class TestFromChin {
     @BeforeAll
@@ -22,12 +19,7 @@ public class TestFromChin {
 
     @BeforeEach
     public void doBefore() {
-        // Scanner str = new Scanner(System.in);
-        // System.out.println("Введите название папки:" + str);
-        // String fold;
-        // fold = str.toString();
         Configuration.reportsFolder = "ScreenShots";
-
         WebDriver webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
         WebDriverRunner.setWebDriver(webDriver);
@@ -54,8 +46,6 @@ public class TestFromChin {
         // Ищем внутренний элемент кнопку добавить в корнзину на первом элементе списка.
         listProducts.get(0).$x(".//a[@title='Add to cart']").click();
         $x("//div[@id='layer_cart']").shouldBe(Condition.visible);
-        // String id = $x("").getAttribute("id");
-        // $x().sendKeys("backspacebac"); Посмотреть backspace
-        // $$x("/a[@id='123']").size() != 0;
+
     }
 }

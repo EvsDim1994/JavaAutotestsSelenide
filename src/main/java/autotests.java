@@ -32,7 +32,6 @@ public class autotests {
 
 
 
-
     @Test
     public void Testsearchwomanclose(){
 
@@ -72,6 +71,10 @@ public class autotests {
             System.out.println("Товар не добавлен");
         }
 
+
+        // String id = $x("").getAttribute("id");
+        // $x().sendKeys("backspacebac"); Посмотреть backspace
+        // $$x("/a[@id='123']").size() != 0;
 
 
 
