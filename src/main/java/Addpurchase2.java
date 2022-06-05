@@ -1,7 +1,6 @@
 import com.codeborne.selenide.*;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.junit.jupiter.api.Test;
 import java.util.List;
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;

@@ -1,40 +1,16 @@
 import com.codeborne.selenide.*;
 import org.junit.jupiter.api.*;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.junit.jupiter.api.Test;
 import java.util.List;
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
 
 
-
+//Добавление T-shirts
 
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Addpurchase extends Hooks {
- /*   @BeforeAll
-    public void doBeforeAll() {
-
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver.exe");
-    }
-
-    @BeforeEach
-    public void doBefore() {
-        Configuration.reportsFolder = "ScreenShots";
-        WebDriver webDriver = new ChromeDriver();
-        webDriver.manage().window().maximize();
-        WebDriverRunner.setWebDriver(webDriver);
-        Selenide.open("http://automationpractice.com/index.php");
-        //Selenide.screenshot("ScreenShots");
-    }
-
-    @AfterEach
-    public void doAfter() {
-
-        WebDriverRunner.getWebDriver().quit();
-    }*/
-
-
     @Test
     public void test1(){
         List<SelenideElement> list = $$x("//div[@id='block_top_menu']/ul/li/a");
