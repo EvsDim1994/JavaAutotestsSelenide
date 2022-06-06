@@ -20,16 +20,17 @@ public class Hooks {
     @BeforeEach
     public void tearDown() {
         Configuration.reportsFolder = "ScreenShots";
+        Configuration.timeout = 20000;
         WebDriver webDriver = new ChromeDriver();
         webDriver.manage().window().maximize();
         WebDriverRunner.setWebDriver(webDriver);
         Selenide.open("http://automationpractice.com/index.php");
     }
 
-   /* @AfterEach
+    @AfterEach
     public void doAfter() {
 
         WebDriverRunner.getWebDriver().quit();
-    }*/
+    }
 
 }
