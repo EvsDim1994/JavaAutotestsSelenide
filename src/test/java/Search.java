@@ -16,7 +16,7 @@ public class Search extends Hooks {
               System.out.println(resultsearch);
           }
           else {
-              System.out.println("Найдено другое количество");
+              System.out.println("Найдено другое количество товара");
           }
           $x("//span[contains(text(),'dress')]").shouldBe(Condition.visible);
           $x("//div[@id='uniform-selectProductSort']").click();
