@@ -22,6 +22,7 @@ public class Registration extends Hooks {
         $x("//a[@title='Log in to your customer account']").click();
         List<SelenideElement> input = $$x("//input[@type='text']");
         String youremail = em;
+
         input.get(1).sendKeys(em);
     }
 }
