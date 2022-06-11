@@ -1,14 +1,35 @@
+import io.restassured.RestAssured;
+import io.restassured.path.json.JsonPath;
+import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+
+import static io.restassured.RestAssured.given;
 import static io.restassured.RestAssured.when;
+import static io.restassured.config.JsonConfig.jsonConfig;
+import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+import static io.restassured.path.json.config.JsonPathConfig.NumberReturnType.BIG_DECIMAL;
 import static org.hamcrest.CoreMatchers.equalTo;
 
-public class ApiTests {
+public class ApiTests extends HooksApi {
     @Test
     public void restAssuredCheck() {
+//        given()
+//            .config(RestAssured.config().jsonConfig(jsonConfig().numberReturnType(BIG_DECIMAL))).
         when()
-            .get("https://www.eldorado.ru/sem/v3/a408/products?limit=15&query=71606112,71626029,71606107,71628007,71541565,71564184,71627999,71091114,71528155,71626758,71606104,71517258")
-            .then()
-            .body("limit", equalTo(16));
+            .get("/posts")
+        .then()
+            .statusCode(200);
+    }
+
+    @Test
+    public void postMethod() {
+        File body = new File("src/test/resources/post.json");
+        Response response = given()
+                .body(body).when()
+            .contentType("application/json")
+            .post("/posts");
+        System.out.println(response.getBody().asString());
     }
 }
