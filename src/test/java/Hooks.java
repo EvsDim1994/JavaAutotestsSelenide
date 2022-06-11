@@ -27,10 +27,10 @@ public class Hooks {
         Selenide.open("http://automationpractice.com/index.php");
     }
 
-    @AfterEach
+ /*   @AfterEach
     public void doAfter() {
 
         WebDriverRunner.getWebDriver().quit();
-    }
+    }*/
 
 }
