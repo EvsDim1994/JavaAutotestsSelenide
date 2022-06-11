@@ -23,6 +23,7 @@ public class Registration extends Hooks {
         List<SelenideElement> input = $$x("//input[@type='text']");
         String youremail = em;
 
+
         input.get(1).sendKeys(em);
     }
 }
