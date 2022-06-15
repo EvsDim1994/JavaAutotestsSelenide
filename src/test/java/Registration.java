@@ -2,6 +2,12 @@ import com.codeborne.selenide.*;
 import com.codeborne.selenide.commands.ToString;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Test;
+
+import java.io.BufferedReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Scanner;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -11,14 +17,19 @@ import static com.codeborne.selenide.Selenide.$x;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Registration extends Hooks {
-
     @Test
+    @Tag("Registration")
     public void test6() {
         $x("//a[@title='Log in to your customer account']").click();
         List<SelenideElement> input = $$x("//input[@type='text']");
         int length = 4;
         String email = "mail"+RandomStringUtils.randomNumeric(length) + "@gmail.com";
         input.get(1).sendKeys(email);
+        try(FileWriter writer = new FileWriter("Login.txt", true)) {
+            writer.write(email);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         $x("//button[@id = 'SubmitCreate']").click();
         $x("//h1[contains(text(),'Create an account') ]").shouldBe(Condition.visible);
         //ввод данных
@@ -28,7 +39,13 @@ public class Registration extends Hooks {
         String inemail = $x("//input[@id='email']").getAttribute("value");
         // пароль
         int length2 = 5;
+
         String password = RandomStringUtils.randomNumeric(length2);
+        try(FileWriter writer2 = new FileWriter("Password.txt", true)) {
+            writer2.write(password);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         $x("//input[@id='passwd']").sendKeys(password);
         //дата рождения
         $x("//select[@id = 'days']").click();
@@ -68,6 +85,30 @@ public class Registration extends Hooks {
             System.out.println("успешная регистрация без дозаполнения");
         }
 
+
+
+        }
+
+        @Test
+        @Tag("Registration")
+        public void test7() {
+             $x("//a[contains(text(),'Sign in')]").click();
+             $x("//h1[contains(text(),'Authentication')]").shouldBe(Condition.visible);
+
+            try (BufferedReader reader = Files.newBufferedReader(Paths.get("Login.txt"))) {
+                String login = reader.readLine();
+                $x("//input[@id='email']").sendKeys(login);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            try (BufferedReader reader = Files.newBufferedReader(Paths.get("Password.txt"))) {
+                String pass = reader.readLine();
+                $x("//input[@id='passwd']").sendKeys(pass);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            $x("//button[@id='SubmitLogin']").click();
+            $x("//h1[contains(text(),'My account')]").shouldBe(Condition.visible);
 
     }
 }
