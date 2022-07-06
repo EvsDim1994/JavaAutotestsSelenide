@@ -26,7 +26,7 @@ import static com.codeborne.selenide.WebDriverRunner.url;
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Clickonadds extends Hooks {
     @Test
-    public void test(){
+    public void test7(){
         String url = "https://www.prestashop.com/en";
         $x("//img[@src='http://automationpractice.com/modules/themeconfigurator/img/banner-img1.jpg']").shouldBe(Condition.visible).click();
         String cururl1 = getWebDriver().getCurrentUrl();
