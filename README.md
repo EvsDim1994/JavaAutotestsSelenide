@@ -1,1 +1,1 @@
-"# Example-Autotest" 
+Автотесты для сайта http://automationpractice.com/index.php
