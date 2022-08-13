@@ -1,12 +1,7 @@
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.WebDriverRunner;
-import io.restassured.RestAssured;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
 import org.junit.jupiter.api.*;
-import org.junit.runner.RunWith;
-import org.junit.runners.Suite;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -15,7 +10,7 @@ public class Hooks {
 
     @BeforeAll
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:/Users/79884/JavaAutotestsSelenide2/chromedriver.exe");
     }
 
     @BeforeEach
@@ -28,9 +23,8 @@ public class Hooks {
         Selenide.open("http://automationpractice.com/index.php");
     }
 
- /*   @AfterEach
+  @AfterEach
     public void doAfter() {
-
         WebDriverRunner.getWebDriver().quit();
-    }*/
+    }
 }

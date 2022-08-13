@@ -1,15 +1,12 @@
 import com.codeborne.selenide.*;
-import com.codeborne.selenide.commands.ToString;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Test;
-
 import java.io.BufferedReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
-import java.util.Scanner;
 import org.apache.commons.lang3.RandomStringUtils;
 
 import static com.codeborne.selenide.Selenide.$$x;

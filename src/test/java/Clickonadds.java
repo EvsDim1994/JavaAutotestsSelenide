@@ -1,27 +1,10 @@
 import com.codeborne.selenide.*;
-import com.codeborne.selenide.commands.ToString;
-import com.codeborne.selenide.conditions.ExplainedCondition;
-import com.google.errorprone.annotations.Var;
-import com.google.gson.annotations.Until;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Test;
-import java.io.BufferedReader;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.util.List;
-import java.util.Scanner;
-import org.apache.commons.lang3.RandomStringUtils;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.junit.jupiter.api.TestInstance;
-
 import static com.codeborne.selenide.Selenide.$x;
-import static com.codeborne.selenide.Selenide.webdriver;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
-import static com.codeborne.selenide.WebDriverRunner.url;
+
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 public class Clickonadds extends Hooks {

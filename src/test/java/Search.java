@@ -1,8 +1,6 @@
 import com.codeborne.selenide.*;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.Test;
-import java.util.List;
-import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
 
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
